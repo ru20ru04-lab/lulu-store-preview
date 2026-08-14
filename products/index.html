@@ -1,0 +1,145 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Shop — LuLu</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="LuLu の商品一覧。すべて一点ずつ、オーナーが着ていた衣類です。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Noto+Serif+JP:wght@300;400&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css?v=17">
+
+<script>window.SITE_ROOT = '../';</script>
+
+<header class="site-header">
+  <div class="frame site-header__inner">
+    <a href="../index.html" class="site-header__logo" data-lulu-logo="header" aria-label="LuLu ホーム"></a>
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="menu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="section frame">
+    <h1 class="section-title" id="shop-title">Shop</h1>
+    <p class="section-note" id="shop-note">全商品、クリーニング済みでお届けします。</p>
+  </section>
+
+  <nav class="filter-chips frame" id="filter-chips" aria-label="カテゴリで絞り込み"></nav>
+
+  <section class="section section--tight frame">
+    <ul class="product-grid product-grid--wide" id="all-grid" aria-live="polite" hidden></ul>
+    <div class="empty-state" id="empty-state" hidden>準備中です。</div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="frame site-footer__inner">
+    <nav class="site-footer__nav" aria-label="フッターメニュー">
+      <a href="../index.html">Home</a>
+      <a href="./index.html">Shop</a>
+      <a href="../legal/tokushoho.html">特定商取引法に基づく表記</a>
+      <a href="../legal/privacy.html">プライバシーポリシー</a>
+    </nav>
+    <p class="site-footer__copy">© LuLu</p>
+  </div>
+</footer>
+
+<!-- ハンバーガーメニュー本体 -->
+<div class="menu" id="menu" hidden aria-hidden="true">
+  <nav class="menu__nav" aria-label="メインメニュー">
+    <ul class="menu__list menu__list--cats" id="menu-cats">
+      <li><a class="menu__link" href="./index.html">All</a></li>
+    </ul>
+    <hr class="menu__divider">
+    <ul class="menu__list menu__list--legal">
+      <li><a class="menu__link" href="../legal/tokushoho.html">特定商取引法に基づく表記</a></li>
+      <li><a class="menu__link" href="../legal/privacy.html">プライバシーポリシー</a></li>
+    </ul>
+  </nav>
+</div>
+
+<script src="../assets/js/logo.js?v=17"></script>
+<script src="../assets/js/shared.js?v=17"></script>
+<script src="../assets/js/menu.js?v=17"></script>
+<script>
+  (async function () {
+    const grid = document.getElementById('all-grid');
+    const empty = document.getElementById('empty-state');
+    const titleEl = document.getElementById('shop-title');
+    const noteEl = document.getElementById('shop-note');
+    if (!grid) return;
+
+    const params = new URLSearchParams(location.search);
+    const category = params.get('category');
+
+    try {
+      const products = await LuLu.loadProducts();
+
+      // カテゴリ絞り込みチップを描画
+      renderFilterChips(products, category);
+
+      let filtered = products;
+      if (category) {
+        filtered = products.filter(function (p) { return p.category === category; });
+        // 見出しをカテゴリ英名に切替（存在するもののみ・未定義は key をそのまま）
+        const en = LuLu.categoryEnLabels[category] || category;
+        titleEl.textContent = en;
+        document.title = en + ' — LuLu';
+      }
+
+      if (!filtered.length) {
+        grid.hidden = true;
+        empty.hidden = false;
+        // 空カテゴリ時は注記も控えめに
+        if (noteEl) noteEl.textContent = '該当の商品はまだありません。';
+        return;
+      }
+
+      grid.hidden = false;
+      empty.hidden = true;
+      grid.innerHTML = filtered.map(function (p) {
+        const soldClass = p.sold ? ' product-card--sold' : '';
+        const soldBadge = p.sold ? '<span class="product-card__sold-badge"><span>Sold</span></span>' : '';
+        const sizeTag = p.size ? '<span class="product-card__size">' + p.size + '</span>' : '';
+        const img = LuLu.assetPath(p.images[0] || '');
+        return (
+          '<li>' +
+          '<a class="product-card' + soldClass + '" href="./detail.html?id=' + encodeURIComponent(p.id) + '">' +
+            '<div class="product-card__media">' +
+              '<img src="' + img + '" alt="' + p.name + '" loading="lazy">' +
+              soldBadge +
+            '</div>' +
+            '<div class="product-card__body">' +
+              '<h3 class="product-card__name">' + p.name + sizeTag + '</h3>' +
+              '<p class="product-card__price">' + LuLu.formatPrice(p.price) + '</p>' +
+            '</div>' +
+          '</a>' +
+          '</li>'
+        );
+      }).join('');
+    } catch (e) {
+      grid.hidden = false;
+      grid.innerHTML = '<li>' + e.message + '</li>';
+    }
+  })();
+
+  function renderFilterChips(products, activeKey) {
+    const wrap = document.getElementById('filter-chips');
+    if (!wrap) return;
+    const cats = LuLu.nonEmptyCategories(products);
+    if (!cats.length) { wrap.hidden = true; return; }
+    const items = [{ key: '', en: 'All' }].concat(cats);
+    wrap.innerHTML = items.map(function (c) {
+      const isActive = (c.key === '' && !activeKey) || (c.key === activeKey);
+      const href = c.key ? './index.html?category=' + encodeURIComponent(c.key) : './index.html';
+      return (
+        '<a class="filter-chip' + (isActive ? ' filter-chip--active' : '') + '"' +
+        (isActive ? ' aria-current="page"' : '') +
+        ' href="' + href + '">' + c.en + '</a>'
+      );
+    }).join('');
+  }
+</script>

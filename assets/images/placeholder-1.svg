@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="商品写真プレースホルダー">
+  <rect width="300" height="400" fill="#F7F7F7"/>
+  <g fill="none" stroke="#D6D6D6" stroke-width="0.8">
+    <path d="M60 90 Q150 40 240 90 L240 340 Q150 380 60 340 Z"/>
+    <path d="M60 90 L110 60 L150 80 L190 60 L240 90"/>
+    <line x1="150" y1="80" x2="150" y2="380"/>
+  </g>
+  <text x="150" y="220" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#B8B8B8" letter-spacing="4">LuLu</text>
+</svg>

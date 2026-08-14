@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="商品写真プレースホルダー">
+  <rect width="300" height="400" fill="#F0F0F0"/>
+  <g fill="none" stroke="#C8C8C8" stroke-width="0.7">
+    <path d="M50 100 L250 100 L230 340 L70 340 Z"/>
+    <line x1="60" y1="140" x2="240" y2="140"/>
+    <line x1="65" y1="180" x2="235" y2="180"/>
+    <line x1="70" y1="220" x2="230" y2="220"/>
+    <line x1="72" y1="260" x2="228" y2="260"/>
+    <line x1="75" y1="300" x2="225" y2="300"/>
+  </g>
+</svg>

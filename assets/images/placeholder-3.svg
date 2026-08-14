@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="商品写真プレースホルダー">
+  <rect width="300" height="400" fill="#F5F5F5"/>
+  <g fill="none" stroke="#D0D0D0" stroke-width="0.8">
+    <circle cx="150" cy="200" r="90"/>
+    <circle cx="150" cy="200" r="65"/>
+    <circle cx="150" cy="200" r="40"/>
+    <line x1="60" y1="200" x2="240" y2="200"/>
+    <line x1="150" y1="110" x2="150" y2="290"/>
+  </g>
+</svg>

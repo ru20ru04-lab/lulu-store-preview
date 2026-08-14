@@ -1,0 +1,306 @@
+[
+  {
+    "id": "001",
+    "name": "ライトグレー クルーネックニット",
+    "price": 4800,
+    "category": "knit",
+    "size": "M",
+    "material": "コットン 60%、ウール 40%",
+    "measurements": {
+      "length": 62,
+      "width": 50,
+      "shoulder": 42,
+      "sleeve": 58
+    },
+    "description": "秋の入り口によく着ていた薄手のニットです。\n一枚でもさらりと着られて、シャツを重ねても様になる厚みです。\n\n毛玉やほつれはありませんが、袖口にわずかな型崩れがあります(3枚目)。着用感は少ない一枚です。",
+    "images": [
+      "/assets/images/placeholder-1.svg",
+      "/assets/images/placeholder-2.svg",
+      "/assets/images/placeholder-3.svg"
+    ],
+    "sold": false
+  },
+  {
+    "id": "002",
+    "name": "ブラック テーラードジャケット",
+    "price": 12800,
+    "category": "outer",
+    "size": "S",
+    "material": "ウール 100%、裏地 キュプラ 100%",
+    "measurements": {
+      "length": 66,
+      "width": 46,
+      "shoulder": 40,
+      "sleeve": 60
+    },
+    "description": "きちんとした場に着ていた黒のジャケットです。\n肩のラインが少し落ちたデザインで、体を拾いすぎません。\n\n目立つ傷みはなく、クリーニング後の保管でした。裏地の右脇に小さな縫い直し跡があります。",
+    "images": [
+      "/assets/images/placeholder-1.svg",
+      "/assets/images/placeholder-2.svg"
+    ],
+    "sold": false
+  },
+  {
+    "id": "003",
+    "name": "オフホワイト リネンシャツ",
+    "price": 3800,
+    "category": "tops",
+    "size": "M",
+    "material": "リネン 100%",
+    "measurements": {
+      "length": 68,
+      "width": 54,
+      "shoulder": 46,
+      "sleeve": 60
+    },
+    "description": "夏場に一番よく着ていた一枚です。\n袖をまくって着ていました。使い込んだリネン特有のやわらかさが出ています。\n\n洗いによる自然な色落ちがあります。目立つ汚れはありません。",
+    "images": [
+      "/assets/images/placeholder-1.svg",
+      "/assets/images/placeholder-2.svg",
+      "/assets/images/placeholder-3.svg"
+    ],
+    "sold": true
+  },
+  {
+    "id": "004",
+    "name": "ネイビー プリーツスカート",
+    "price": 4200,
+    "category": "bottoms",
+    "size": "M",
+    "material": "ポリエステル 100%",
+    "measurements": {
+      "length": 72,
+      "width": 34
+    },
+    "description": "ミモレ丈のプリーツスカートです。\nトップスを選ばず、着るだけで整って見える一枚でした。\n\nプリーツはきれいに残っています。裾に糸のほつれが1cmほどあります(4枚目)。",
+    "images": [
+      "/assets/images/placeholder-1.svg",
+      "/assets/images/placeholder-2.svg",
+      "/assets/images/placeholder-3.svg",
+      "/assets/images/placeholder-4.svg"
+    ],
+    "sold": false
+  },
+  {
+    "id": "005",
+    "name": "ベージュ ロングコート",
+    "price": 18500,
+    "category": "outer",
+    "size": "M",
+    "material": "ウール 80%、ナイロン 20%",
+    "measurements": {
+      "length": 108,
+      "width": 52,
+      "shoulder": 44,
+      "sleeve": 62
+    },
+    "description": "冬の主戦力でした。ボタンを開けて羽織るのも、閉めてまっすぐ着るのもきれいに落ちます。\n\n表地に目立つ傷みはありません。内ポケット付近の縫製が一箇所ほつれています。",
+    "images": [
+      "/assets/images/placeholder-1.svg",
+      "/assets/images/placeholder-2.svg"
+    ],
+    "sold": false
+  },
+  {
+    "id": "006",
+    "name": "ブラック タートルネック",
+    "price": 3200,
+    "category": "knit",
+    "size": "S",
+    "material": "メリノウール 100%",
+    "measurements": {
+      "length": 60,
+      "width": 44,
+      "shoulder": 38,
+      "sleeve": 58
+    },
+    "description": "冬の下地として毎年着ていました。\n薄手ですが暖かく、ジャケットの下にも収まります。\n\n毛玉は目立ちません。首元にわずかな伸びがあります。",
+    "images": [
+      "/assets/images/placeholder-1.svg",
+      "/assets/images/placeholder-2.svg"
+    ],
+    "sold": false
+  },
+  {
+    "id": "007",
+    "name": "オフホワイト ロングワンピース",
+    "price": 8900,
+    "category": "dress",
+    "size": "M",
+    "material": "コットン 100%",
+    "measurements": {
+      "length": 118,
+      "width": 48,
+      "shoulder": 38,
+      "sleeve": 56
+    },
+    "description": "初夏から夏の終わりまで、ずっと着ていた一枚です。\n体のラインを拾わず、それでいて全体はきちんと見えます。\n\n汗染みや汚れはありません。裾の内側に薄い折り皺の跡があります。",
+    "images": [
+      "/assets/images/placeholder-1.svg",
+      "/assets/images/placeholder-2.svg",
+      "/assets/images/placeholder-3.svg"
+    ],
+    "sold": false
+  },
+  {
+    "id": "008",
+    "name": "グレー ウールパンツ",
+    "price": 5600,
+    "category": "bottoms",
+    "size": "M",
+    "material": "ウール 100%",
+    "measurements": {
+      "length": 96,
+      "width": 34
+    },
+    "description": "秋冬に活躍していたテーパードパンツです。\nセンタープレスがくっきり出るしっかりした生地です。\n\nプレスの跡はきれいに残っています。裾裏に軽い擦れがあります(4枚目)。",
+    "images": [
+      "/assets/images/placeholder-1.svg",
+      "/assets/images/placeholder-2.svg",
+      "/assets/images/placeholder-3.svg",
+      "/assets/images/placeholder-4.svg"
+    ],
+    "sold": false
+  },
+  {
+    "id": "009",
+    "name": "ブラック シルクブラウス",
+    "price": 6800,
+    "category": "tops",
+    "size": "M",
+    "material": "シルク 100%",
+    "measurements": {
+      "length": 62,
+      "width": 50,
+      "shoulder": 40,
+      "sleeve": 58
+    },
+    "description": "きちんとした席に着ていました。落ち感のあるシルクで、動くたびに表情が変わります。\n\n汚れはありません。左袖の内側に、洗濯タグから移った小さな色移りが一箇所あります。",
+    "images": [
+      "/assets/images/placeholder-1.svg",
+      "/assets/images/placeholder-2.svg"
+    ],
+    "sold": true
+  },
+  {
+    "id": "010",
+    "name": "オフホワイト ケーブルニットカーディガン",
+    "price": 5200,
+    "category": "cardigan",
+    "size": "M",
+    "material": "コットン 100%",
+    "measurements": {
+      "length": 60,
+      "width": 52,
+      "shoulder": 42,
+      "sleeve": 58
+    },
+    "description": "肌寒い時期の羽織りとして毎年出していました。\nボタンを閉めても開けてもきれいに落ちる作りです。\n\n袖口に軽い毛玉があります(3枚目)。目立つ汚れはありません。",
+    "images": [
+      "/assets/images/placeholder-1.svg",
+      "/assets/images/placeholder-2.svg",
+      "/assets/images/placeholder-3.svg"
+    ],
+    "sold": false
+  },
+  {
+    "id": "011",
+    "name": "ブラック プリーツロングスカート",
+    "price": 4600,
+    "category": "bottoms",
+    "size": "M",
+    "material": "ポリエステル 100%",
+    "measurements": {
+      "length": 88,
+      "width": 34
+    },
+    "description": "落ち感のあるロング丈のスカートです。\nTシャツから、きれいめのブラウスまで幅広く合わせられました。\n\nプリーツはしっかり残っています。目立つ傷みはありません。",
+    "images": [
+      "/assets/images/placeholder-1.svg",
+      "/assets/images/placeholder-2.svg"
+    ],
+    "sold": false
+  },
+  {
+    "id": "012",
+    "name": "チャコール ウールコート",
+    "price": 15800,
+    "category": "outer",
+    "size": "S",
+    "material": "ウール 100%",
+    "measurements": {
+      "length": 92,
+      "width": 48,
+      "shoulder": 42,
+      "sleeve": 60
+    },
+    "description": "少し短めの丈のウールコートです。\n体のラインを拾わず、それでいて重すぎない、程よい厚みです。\n\n目立つ傷みはありません。前身頃の裏地に極めて薄い糸引きが一箇所あります。",
+    "images": [
+      "/assets/images/placeholder-1.svg",
+      "/assets/images/placeholder-2.svg",
+      "/assets/images/placeholder-3.svg"
+    ],
+    "sold": false
+  },
+  {
+    "id": "013",
+    "name": "ホワイト ボートネックカットソー",
+    "price": 2800,
+    "category": "tops",
+    "size": "M",
+    "material": "コットン 95%、ポリウレタン 5%",
+    "measurements": {
+      "length": 60,
+      "width": 46,
+      "shoulder": 38,
+      "sleeve": 22
+    },
+    "description": "定番として何年も着ていた一枚です。\n適度な厚みで一枚でも透けません。\n\n洗いによる自然な柔らかさが出ています。目立つシミはありません。",
+    "images": [
+      "/assets/images/placeholder-1.svg",
+      "/assets/images/placeholder-2.svg"
+    ],
+    "sold": false
+  },
+  {
+    "id": "014",
+    "name": "ネイビー ノーカラージャケット",
+    "price": 9800,
+    "category": "outer",
+    "size": "M",
+    "material": "ポリエステル 65%、レーヨン 30%、ポリウレタン 5%",
+    "measurements": {
+      "length": 60,
+      "width": 46,
+      "shoulder": 40,
+      "sleeve": 58
+    },
+    "description": "オフィスにもプライベートにも着られる一枚でした。\n伸縮性があり、着ていて疲れません。\n\n目立つ傷みはありません。裾のステッチにわずかな緩みがあります。",
+    "images": [
+      "/assets/images/placeholder-1.svg",
+      "/assets/images/placeholder-2.svg"
+    ],
+    "sold": false
+  },
+  {
+    "id": "015",
+    "name": "グレー ロングカーディガン",
+    "price": 5800,
+    "category": "cardigan",
+    "size": "M",
+    "material": "アクリル 60%、ウール 40%",
+    "measurements": {
+      "length": 88,
+      "width": 54,
+      "shoulder": 44,
+      "sleeve": 60
+    },
+    "description": "冬の室内着として毎日のように羽織っていました。\nロング丈で、椅子に座っていても腰まわりが冷えません。\n\n袖口に自然な着用感があります。ボタンは全て揃っています。",
+    "images": [
+      "/assets/images/placeholder-1.svg",
+      "/assets/images/placeholder-2.svg",
+      "/assets/images/placeholder-3.svg"
+    ],
+    "sold": false
+  }
+]

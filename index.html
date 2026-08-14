@@ -1,0 +1,120 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>LuLu</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="LuLu — 一点ずつの、きれいなもの。オーナーが着てきた衣類のオンラインストア。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Noto+Serif+JP:wght@300;400&display=swap">
+<link rel="stylesheet" href="./assets/css/style.css?v=17">
+
+<script>window.SITE_ROOT = './';</script>
+
+<!-- オープニングオーバーレイ（本文は下に維持） -->
+<div class="intro-overlay" id="intro-overlay" aria-hidden="true">
+  <span class="intro-overlay__logo">LuLu</span>
+</div>
+
+<header class="site-header">
+  <div class="frame site-header__inner">
+    <a href="./index.html" class="site-header__logo" data-lulu-logo="header" aria-label="LuLu ホーム"></a>
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="menu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <!-- ①②③ スライドスタック（Miu Miu 型：次スライドが下から100%スライドイン） -->
+  <div class="slide-stack" id="slide-stack" data-active="0" aria-label="トップスライド">
+    <section class="slide slide--hero hero frame" aria-label="LuLu">
+      <div data-lulu-logo="hero" aria-hidden="true"></div>
+      <h1 class="sr-only">LuLu — きれいなもののオンラインストア</h1>
+    </section>
+
+    <section class="slide slide--visual visual" aria-label="ビジュアル">
+      <div class="visual__frame">
+        <img src="./assets/images/visual-1.svg" alt="" loading="lazy">
+      </div>
+    </section>
+
+    <section class="slide slide--new">
+      <div class="slide__scroll frame">
+        <h2 class="section-title section-title--eyebrow">新着</h2>
+        <ul class="product-grid product-grid--four" id="new-grid" aria-live="polite"></ul>
+
+        <div class="slide__tail center">
+          <p style="margin-bottom: 2.5rem;">
+            <a href="./products/index.html" class="link-button link-button--wide">すべての商品を見る</a>
+          </p>
+          <p class="section-note">全商品、クリーニング済みでお届けします。</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="frame site-footer__inner">
+    <nav class="site-footer__nav" aria-label="フッターメニュー">
+      <a href="./products/index.html">Shop</a>
+      <a href="./legal/tokushoho.html">特定商取引法に基づく表記</a>
+      <a href="./legal/privacy.html">プライバシーポリシー</a>
+    </nav>
+    <p class="site-footer__copy">© LuLu</p>
+  </div>
+</footer>
+
+<!-- ハンバーガーメニュー本体 -->
+<div class="menu" id="menu" hidden aria-hidden="true">
+  <nav class="menu__nav" aria-label="メインメニュー">
+    <ul class="menu__list menu__list--cats" id="menu-cats">
+      <li><a class="menu__link" href="./products/index.html">All</a></li>
+    </ul>
+    <hr class="menu__divider">
+    <ul class="menu__list menu__list--legal">
+      <li><a class="menu__link" href="./legal/tokushoho.html">特定商取引法に基づく表記</a></li>
+      <li><a class="menu__link" href="./legal/privacy.html">プライバシーポリシー</a></li>
+    </ul>
+  </nav>
+</div>
+
+<script src="./assets/js/logo.js?v=17"></script>
+<script src="./assets/js/intro.js?v=17"></script>
+<script src="./assets/js/slides.js?v=17"></script>
+<script src="./assets/js/shared.js?v=17"></script>
+<script src="./assets/js/menu.js?v=17"></script>
+<script>
+  (async function () {
+    const grid = document.getElementById('new-grid');
+    if (!grid) return;
+    try {
+      const products = await LuLu.loadProducts();
+      const items = products.slice(0, 4);
+      grid.innerHTML = items.map(function (p) {
+        const soldClass = p.sold ? ' product-card--sold' : '';
+        const soldBadge = p.sold ? '<span class="product-card__sold-badge"><span>Sold</span></span>' : '';
+        const sizeTag = p.size ? '<span class="product-card__size">' + p.size + '</span>' : '';
+        const img = LuLu.assetPath(p.images[0] || '');
+        return (
+          '<li>' +
+          '<a class="product-card' + soldClass + '" href="./products/detail.html?id=' + encodeURIComponent(p.id) + '">' +
+            '<div class="product-card__media">' +
+              '<img src="' + img + '" alt="' + p.name + '" loading="lazy">' +
+              soldBadge +
+            '</div>' +
+            '<div class="product-card__body">' +
+              '<h3 class="product-card__name">' + p.name + sizeTag + '</h3>' +
+              '<p class="product-card__price">' + LuLu.formatPrice(p.price) + '</p>' +
+            '</div>' +
+          '</a>' +
+          '</li>'
+        );
+      }).join('');
+    } catch (e) {
+      grid.innerHTML = '<li>' + e.message + '</li>';
+    }
+  })();
+</script>

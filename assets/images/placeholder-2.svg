@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="商品写真プレースホルダー">
+  <rect width="300" height="400" fill="#F2F2F2"/>
+  <g fill="none" stroke="#CCCCCC" stroke-width="0.8">
+    <path d="M80 100 Q150 70 220 100 L220 340 Q150 370 80 340 Z"/>
+    <path d="M100 130 Q150 115 200 130"/>
+    <path d="M100 180 Q150 165 200 180"/>
+    <path d="M100 230 Q150 215 200 230"/>
+    <path d="M100 280 Q150 265 200 280"/>
+  </g>
+</svg>
